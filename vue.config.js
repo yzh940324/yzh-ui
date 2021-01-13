@@ -1,12 +1,16 @@
-let server = require('./config/serverConfig').server;
+let path = require('path')
+function resolve (dir) {
+    return path.join(__dirname, dir)
+}
+let devServer = require('./config/serverConfig').devServer;
 let css = require('./config/cssConfig').css;
-let webpack = require('./config/webpackConfig').webpack();
+let configureWebpack = require('./config/webpackConfig').configureWebpack();
 
 module.exports = {
     // 开发环境配置
-    server,
+    devServer,
     // 部署配置
-    webpack,
+    configureWebpack,
     // CSS配置
     css,
     // 打包后的路径引用配置
@@ -44,7 +48,7 @@ module.exports = {
                 cacheGroups: {
                     vendors: {
                         name: 'chunk-vendors',
-                        minChunks: 2, //当前项目里面的html的个数
+                        minChunks: 1, //当前项目里面的html的个数
                         test: /node_modules/,
                         priority: -10,
                         chunks: 'initial' //'all'所有代码块，'async'按需加载的代码块，'initial'初始化代码块

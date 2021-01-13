@@ -1,5 +1,5 @@
 //开发环境配置
-let server = {
+let devServer = {
     host: '0.0.0.0',
     port: process.env.PORT || 8088,
     proxy: {
@@ -19,4 +19,4 @@ let server = {
     disableHostCheck: true //解决部署到服务器上提示Invalid Host header
 }
 
-module.exports.server = server;
+module.exports.devServer = devServer;

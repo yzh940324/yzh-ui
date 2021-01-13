@@ -2,7 +2,7 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 let v = process.env.VUE_APP_VERSION;//版本号
-module.exports.webpack = function(config) {
+module.exports.configureWebpack = function(config) {
     let configures = {
         // 使用CDN， 在index.html引入
         externals: {
