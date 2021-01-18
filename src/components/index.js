@@ -1,7 +1,7 @@
-import button from './button'
+import map from './map'
 
 export default {
     install(Vue) {
-        Vue.use(button);
+        Vue.use(map); // 地图组件
     }
 }

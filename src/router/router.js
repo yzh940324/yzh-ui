@@ -2,9 +2,6 @@ import {
     baseRouter
 } from './baseRouter'
 
-export const routers = [{
-    path: '/',
-    redirect: '/'
-  },
+export const routers = [
   ...baseRouter, // 基础路由
 ]

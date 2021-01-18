@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-
+        <yzh-baidu-map :coordinateList="coordinateList"/>
     </div>
 </template>
 
@@ -13,7 +13,14 @@
             content
         },
         setup() {
-
+            const coordinateList = [{
+                lng: 121.461522,
+                lat: 31.283114
+            }]
+            
+            return{
+                coordinateList
+            }
         }
     }
 </script>

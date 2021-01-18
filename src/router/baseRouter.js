@@ -1,7 +1,7 @@
 // 基础路由
 export const baseRouter = [{
     path: '/',
-    name: '',
+    name: 'index',
     meta: {
         title: '首页'
     },
