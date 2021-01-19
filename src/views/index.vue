@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <yzh-baidu-map :coordinateList="coordinateList"/>
+        <baidu-map :centerPoint="centerPoint" />
     </div>
 </template>
 
@@ -13,13 +13,13 @@
             content
         },
         setup() {
-            const coordinateList = [{
-                lng: 121.461522,
-                lat: 31.283114
+            let centerPoint = [{
+                lng: 121.461466,
+                lat: 31.284477
             }]
-            
-            return{
-                coordinateList
+
+            return {
+                centerPoint
             }
         }
     }

@@ -27,7 +27,7 @@ npm run build
 <div id="baidu_map">baiduMap.vue</div>
 
 ```javascript
-coordinateList = [{ // 必传经纬度 - 初始中心点
+centerPoint = [{ // 初始中心点坐标
     lng: '',
     lat: ''
 }]
