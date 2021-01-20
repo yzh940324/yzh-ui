@@ -1,16 +1,16 @@
 # yzh-ui
 爱洋芋爱生活~
-## Project setup
+## 下载项目依赖包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 运行
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包
 ```
 npm run build
 ```
@@ -26,7 +26,7 @@ npm run build
 ### 地图组件
 <div id="baidu_map">baiduMap.vue</div>
 
-## 地图展示需要至少一项  默认城市名为上海市
+### 地图展示需要至少一项  默认城市名为上海市
 ```javascript
 centerPoint = [{ // 初始中心点坐标
     lng: '',
