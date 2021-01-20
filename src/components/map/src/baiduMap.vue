@@ -79,8 +79,13 @@
           cPoint = props.cityName ? props.cityName : '';
         }
         map.centerAndZoom(cPoint, props.mapZoom); // 初始化地图,设置中心点坐标和地图级别
+
+        initPlug(); // 插件初始化
+      }
+
+      const initPlug = () => { // 初始化插件方法
         map.enableScrollWheelZoom(props.enableScrollWheelZoom); // 开启鼠标滚轮缩放
-        if(props.scaleControl) map.addControl(new mapGl.ScaleControl()); // 比例尺控件
+        if (props.scaleControl) map.addControl(new mapGl.ScaleControl()); // 比例尺控件
       }
 
       onMounted(() => {
