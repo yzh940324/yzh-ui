@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <baidu-map :centerPoint="centerPoint" />
+        <baidu-map cityName="上海市" />
     </div>
 </template>
 
@@ -13,14 +13,7 @@
             content
         },
         setup() {
-            let centerPoint = [{
-                lng: 121.461466,
-                lat: 31.284477
-            }]
 
-            return {
-                centerPoint
-            }
         }
     }
 </script>
