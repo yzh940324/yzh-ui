@@ -1,7 +1,5 @@
 <template>
-  <div id="baidu-map">
-
-  </div>
+  <div id="baidu-map"/>
 </template>
 
 <script>
@@ -19,7 +17,7 @@
        */
       gl: {
         type: Boolean,
-        default: false
+        default: true
       },
       /**
        * 地图 - 缩放级别

@@ -29,9 +29,18 @@ npm run build
 ### 地图组件使用方法
 功能 | 跳转
 ----- | -----
+地图显示类型 | [跳转](#map_gl)
 显示地图 | [跳转](#map_show)
 添加覆盖物 | [跳转](#map_point)
 覆盖物点击 | [跳转](#map_point_click)
+
+### 地图显示类型
+<div id="map_gl"></div>
+
+默认为GL模式可设置gl=false进行关闭
+```html
+<baidu-map :gl="true" />
+```
 
 ### 地图展示需要至少一项 默认城市名为上海市
 <div id="map_show"></div>

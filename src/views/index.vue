@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <baidu-map :pointList="pointList" @clickPoint="handsClickPoint" />
+        <baidu-map/>
     </div>
 </template>
 
