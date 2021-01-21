@@ -51,17 +51,21 @@ npm run build
 ```
 
 ```javascript
-centerPoint = [{ // 初始中心点坐标
-lng: '',
-lat: ''
-}]
+centerPoint = [ // 初始中心点坐标
+    { 
+    lng: '',
+    lat: ''
+    }
+]
 
 cityName = '上海市' // 城市名
 
-pointList = [{ // 坐标数组（常用于渲染坐标）
-lng: '',
-lat: ''
-}]
+pointList = [ // 坐标数组（常用于渲染坐标）
+    { 
+    lng: '',
+    lat: ''
+    }
+]
 ```
 
 ### 地图添加点覆盖物
