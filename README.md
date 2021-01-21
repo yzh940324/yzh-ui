@@ -63,7 +63,7 @@ lat: ''
 
 ```javascript
 pointList = [{ // 坐标数组
-lng: 121.458503, 
+lng: 121.458503,
 lat: 31.285845
 }, {
 lng: 121.464788,
@@ -77,12 +77,12 @@ lat: 31.302002
 <div id="map_point_click"></div>
 
 ```html
-<baidu-map :pointList="pointList" />
+<baidu-map :pointList="pointList" @clickPoint="handsClickPoint" />
 ```
 
 ```javascript
 pointList = [{ // 坐标数组
-lng: 121.458503, 
+lng: 121.458503,
 lat: 31.285845,
 infoWindow: `<div>窗口1</div>` // 自定义弹窗内容
 }, {
@@ -90,6 +90,8 @@ lng: 121.464788,
 lat: 31.302002,
 infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
 }]
+
+const handsClickPoint = (e,v) => { // e：覆盖点数据 v：百度地图marker对象
+   
+}
 ```
-
-
