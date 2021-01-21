@@ -81,7 +81,15 @@
       contextMenuList: {
         type: Array,
         default: []
+      },
+      /**
+       * 右键菜单 - 菜单宽度
+       */
+      contextMenuWidth: {
+        type: [Number,String],
+        default: []
       }
+
     },
     setup(props, ctx) {
       let mapGl; // 地图渲染类型
@@ -113,9 +121,12 @@
         if (props.scaleControl) map.addControl(new mapGl.ScaleControl()); // 比例尺控件
         if (props.contextMenu && props.contextMenuList.length) {
           let menu = new mapGl.ContextMenu(); // 创建菜单实例
-          props.contextMenuList.forEach(v => { // 遍历菜单列表
+          props.contextMenuList.forEach((v,i) => { // 遍历菜单列表
             // 添加菜单（菜单名，菜单回调函数，菜单宽度）
-            menu.addItem(new mapGl.MenuItem(v.menuName, v.callback, v.menuWidth ? v.menuWidth : 100));
+            menu.addItem(new mapGl.MenuItem(v.menuName, v.callback, {
+              width: props.contextMenuWidth ? parseInt(props.contextMenuWidth) : 100, // 指定菜单项的宽度
+              id: 'menu' + i // 指定菜单项dom的id
+            }));
           })
           map.addContextMenu(menu);
         }

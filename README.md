@@ -33,6 +33,7 @@ npm run build
 显示地图 | [跳转](#map_show)
 添加覆盖物 | [跳转](#map_point)
 覆盖物点击 | [跳转](#map_point_click)
+右键菜单 | [跳转](#map_context_menu)
 
 ### 地图显示类型
 <div id="map_gl"></div>
@@ -102,9 +103,35 @@ lat: 31.302002,
 infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
 }]
 
-const handsClickPoint = (e,v) => { 
-    // e：覆盖点数据 
-    // v：百度地图marker对象
-    // 一般常用于点击后自定义操作
+const handsClickPoint = (e,v) => {
+// e：覆盖点数据
+// v：百度地图marker对象
+// 一般常用于点击后自定义操作
 }
+```
+### 地图右键菜单
+<div id="map_context_menu"></div>
+
+### contextMenu-菜单开启状态，contextMenuList-菜单列表，contextMenuWidth-菜单宽度，ref方便菜单调用地图组件内方法
+```html
+<baidu-map :contextMenu="true" :contextMenuList="contextMenuList" :contextMenuWidth="200" ref="mapRef" />
+```
+
+```javascript
+let contextMenuList = [{ // 菜单列表
+menuName: '地图放大', // 地图名
+callback: v => { // 点击菜单回调函数
+mapRef.value.zoomIn(); // 地图放大
+}
+}, {
+menuName: '地图缩小',
+callback: v => {
+mapRef.value.zoomOut(); // 地图缩小
+}
+},{
+menuName: '自定义回调',
+callback: v => {
+alert('点击了自定义回调菜单'); // 可自定义配置
+}
+}]
 ```
