@@ -80,6 +80,8 @@ lat: 31.302002
 <baidu-map :pointList="pointList" @clickPoint="handsClickPoint" />
 ```
 
+### 目前分为两种方式 传入infoWindow自定义弹窗显示或执行clickPoint函数获取点击对象
+
 ```javascript
 pointList = [{ // 坐标数组
 lng: 121.458503,
