@@ -15,10 +15,12 @@
         setup() {
             let pointList = [{
                 lng: 121.458503,
-                lat: 31.285845
+                lat: 31.285845,
+                infoWindow: `<div>窗口1</div>`
             }, {
-                lng: 121.464788,
-                lat: 31.302002
+                lng: 121.481099,
+                lat: 31.238688,
+                infoWindow: `<div>窗口2</div>`
             }]
 
             const handsClickPoint = (e,v) => {

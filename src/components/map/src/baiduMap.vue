@@ -69,7 +69,7 @@
       pointClick: {
         type: Boolean,
         default: true
-      }
+      },
     },
     setup(props, ctx) {
       let mapGl; // 地图渲染类型
@@ -85,7 +85,7 @@
         } else if (props.pointList.length) { // 坐标数组是否存在
           cPoint = new mapGl.Point(props.pointList[0].lng, props.pointList[0].lat); // 初始中心点 - 坐标数组入参
           props.pointList.forEach(v => { // 点覆盖物初始化
-            initPoint(new mapGl.Point(v.lng, v.lat));
+            initPoint(new mapGl.Point(v.lng, v.lat),v.infoWindow);
           })
         } else { // 初始中心点 - 城市名入参
           cPoint = props.cityName ? props.cityName : '';
@@ -101,12 +101,13 @@
         if (props.scaleControl) map.addControl(new mapGl.ScaleControl()); // 比例尺控件
       }
 
-      const initPoint = (point) => { // 初始化点覆盖物
+      const initPoint = (point,infoWindow) => { // 初始化点覆盖物
         let marker = new mapGl.Marker(point); // 创建点标记
         map.addOverlay(marker); // 地图放置点标记
 
         if (props.pointClick) { // 覆盖物点击事情状态判断
           marker.addEventListener('click', () => {
+            if(infoWindow) map.openInfoWindow(new mapGl.InfoWindow(infoWindow),point)
             ctx.emit('clickPoint', point, marker);
           });
         }
@@ -123,7 +124,9 @@
 
       return {
         mapGl,
-        initMap
+        initMap,
+        initPoint,
+        initPlug
       }
     }
   }
