@@ -91,7 +91,9 @@ lat: 31.302002,
 infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
 }]
 
-const handsClickPoint = (e,v) => { // e：覆盖点数据 v：百度地图marker对象
-   
+const handsClickPoint = (e,v) => { 
+    // e：覆盖点数据 
+    // v：百度地图marker对象
+    // 一般常用于点击后自定义操作
 }
 ```
