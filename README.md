@@ -19,21 +19,21 @@ npm run build
 [npm install vue-router@4](https://next.router.vuejs.org/installation.html)
 
 ### 组件列表
-组件 | 组件名
------ | -----
-百度地图组件 | [baiduMap.vue](#baidu_map)
+| 组件         | 组件名                     |
+| ------------ | -------------------------- |
+| 百度地图组件 | [baiduMap.vue](#baidu_map) |
 
 ### 地图组件
 <div id="baidu_map">baiduMap.vue</div>
 
 ### 地图组件使用方法
-功能 | 跳转
------ | -----
-地图显示类型 | [跳转](#map_gl)
-显示地图 | [跳转](#map_show)
-添加覆盖物 | [跳转](#map_point)
-覆盖物点击 | [跳转](#map_point_click)
-右键菜单 | [跳转](#map_context_menu)
+| 功能         | 跳转                      |
+| ------------ | ------------------------- |
+| 地图显示类型 | [跳转](#map_gl)           |
+| 显示地图     | [跳转](#map_show)         |
+| 添加覆盖物   | [跳转](#map_point)        |
+| 覆盖物点击   | [跳转](#map_point_click)  |
+| 右键菜单     | [跳转](#map_context_menu) |
 
 ### 地图显示类型
 <div id="map_gl"></div>
@@ -72,13 +72,15 @@ lat: ''
 ```
 
 ```javascript
-pointList = [{ // 坐标数组
-lng: 121.458503,
-lat: 31.285845
-}, {
-lng: 121.464788,
-lat: 31.302002
-}]
+pointList = [ // 坐标数组
+    { 
+        lng: 121.458503,
+        lat: 31.285845
+    }, {
+        lng: 121.464788,
+        lat: 31.302002
+    }
+]
 ```
 ![点覆盖示例图](https://github.com/yzh940324/yzh-ui/blob/master/src/assets/img/map_point.png)
 
@@ -93,15 +95,17 @@ lat: 31.302002
 ### 目前分为两种方式 传入infoWindow自定义弹窗显示或执行clickPoint函数获取点击对象
 
 ```javascript
-pointList = [{ // 坐标数组
-lng: 121.458503,
-lat: 31.285845,
-infoWindow: `<div>窗口1</div>` // 自定义弹窗内容
-}, {
-lng: 121.464788,
-lat: 31.302002,
-infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
-}]
+pointList = [ // 坐标数组
+    { 
+    lng: 121.458503,
+    lat: 31.285845,
+    infoWindow: `<div>窗口1</div>` // 自定义弹窗内容
+    }, {
+    lng: 121.464788,
+    lat: 31.302002,
+    infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
+    }
+]
 
 const handsClickPoint = (e,v) => {
 // e：覆盖点数据
@@ -118,20 +122,18 @@ const handsClickPoint = (e,v) => {
 ```
 
 ```javascript
-let contextMenuList = [{ // 菜单列表
-menuName: '地图放大', // 地图名
-callback: v => { // 点击菜单回调函数
-mapRef.value.zoomIn(); // 地图放大
-}
-}, {
-menuName: '地图缩小',
-callback: v => {
-mapRef.value.zoomOut(); // 地图缩小
-}
-},{
-menuName: '自定义回调',
-callback: v => {
-alert('点击了自定义回调菜单'); // 可自定义配置
-}
-}]
+let contextMenuList = [
+    { // 菜单列表
+    menuName: '地图放大', // 地图名
+    callback: v => { // 点击菜单回调函数
+    mapRef.value.zoomIn(); // 地图放大
+    }}, {
+    menuName: '地图缩小',
+    callback: v => {
+    mapRef.value.zoomOut(); // 地图缩小
+    }},{
+    menuName: '自定义回调',
+    callback: v => {
+    alert('点击了自定义回调菜单'); // 可自定义配置
+    }}]
 ```
