@@ -69,3 +69,5 @@ lng: 121.464788,
 lat: 31.302002
 }]
 ```
+
+![avatar](/src/asstes/img/map_point.png)
