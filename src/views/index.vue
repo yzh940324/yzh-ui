@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <baidu-map cityName="上海市" />
+        <baidu-map :pointList="pointList" />
     </div>
 </template>
 
@@ -13,7 +13,17 @@
             content
         },
         setup() {
+            let pointList = [{
+                lng: 121.458503,
+                lat: 31.285845
+            }, {
+                lng: 121.464788,
+                lat: 31.302002
+            }]
 
+            return{
+                pointList
+            }
         }
     }
 </script>

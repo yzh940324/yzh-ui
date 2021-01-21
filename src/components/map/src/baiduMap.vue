@@ -70,14 +70,20 @@
 
       const initMap = () => { // 初始化地图方法
         map = new mapGl.Map('baidu-map'); // 创建地图实例
+
         let cPoint; // 中心点/城市名
+
         if (props.centerPoint.length) { // 初始中心点 - 中心点入参
           cPoint = new mapGl.Point(props.centerPoint[0].lng, props.centerPoint[0].lat);
-        } else if (props.pointList.length) { // 初始中心点 - 坐标数组入参
-          cPoint = new mapGl.Point(props.pointList[0].lng, props.pointList[0].lat);
+        } else if (props.pointList.length) { // 坐标数组是否存在
+          cPoint = new mapGl.Point(props.pointList[0].lng, props.pointList[0].lat); // 初始中心点 - 坐标数组入参
+          props.pointList.forEach(v => { // 点覆盖物初始化
+            initPoint(new mapGl.Point(v.lng, v.lat));
+          })
         } else { // 初始中心点 - 城市名入参
           cPoint = props.cityName ? props.cityName : '';
         }
+
         map.centerAndZoom(cPoint, props.mapZoom); // 初始化地图,设置中心点坐标和地图级别
 
         initPlug(); // 插件初始化
@@ -86,6 +92,11 @@
       const initPlug = () => { // 初始化插件方法
         map.enableScrollWheelZoom(props.enableScrollWheelZoom); // 开启鼠标滚轮缩放
         if (props.scaleControl) map.addControl(new mapGl.ScaleControl()); // 比例尺控件
+      }
+
+      const initPoint = (point) => { // 初始化点覆盖物
+        let marker = new mapGl.Marker(point); // 创建点标记
+        map.addOverlay(marker); // 地图放置点标记
       }
 
       onMounted(() => {
