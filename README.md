@@ -69,4 +69,4 @@ lng: 121.464788,
 lat: 31.302002
 }]
 ```
-![image](https://github.com/yzh940324/yzh-ui/blob/master/src/assets/img/map_point.png)
+![点覆盖示例图](https://github.com/yzh940324/yzh-ui/blob/master/src/assets/img/map_point.png)
