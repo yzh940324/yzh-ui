@@ -69,5 +69,4 @@ lng: 121.464788,
 lat: 31.302002
 }]
 ```
-
-![avatar](/src/assets/img/map_point.png)
+![image](https://github.com/yzh940324/yzh-ui/blob/master/src/assets/img/map_point.png)
