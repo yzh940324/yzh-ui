@@ -27,10 +27,10 @@ npm run build
 <div id="baidu_map">baiduMap.vue</div>
 
 ### 地图组件使用方法
-功能
----
-[显示地图](#map_show)
-[添加覆盖物](#map_point)
+功能 | 跳转
+----- | -----
+显示地图 | [跳转](#map_show)
+添加覆盖物 | [跳转](#map_point)
 
 ### 地图展示需要至少一项 默认城市名为上海市
 <div id="map_show"></div>
