@@ -31,6 +31,7 @@ npm run build
 ----- | -----
 显示地图 | [跳转](#map_show)
 添加覆盖物 | [跳转](#map_point)
+覆盖物点击 | [跳转](#map_point_click)
 
 ### 地图展示需要至少一项 默认城市名为上海市
 <div id="map_show"></div>
@@ -70,3 +71,25 @@ lat: 31.302002
 }]
 ```
 ![点覆盖示例图](https://github.com/yzh940324/yzh-ui/blob/master/src/assets/img/map_point.png)
+
+
+### 地图点覆盖物点击
+<div id="map_point_click"></div>
+
+```html
+<baidu-map :pointList="pointList" />
+```
+
+```javascript
+pointList = [{ // 坐标数组
+lng: 121.458503, 
+lat: 31.285845,
+infoWindow: `<div>窗口1</div>` // 自定义弹窗内容
+}, {
+lng: 121.464788,
+lat: 31.302002,
+infoWindow: `<div>窗口2</div>` // 自定义弹窗内容
+}]
+```
+
+
