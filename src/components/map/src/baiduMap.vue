@@ -62,6 +62,13 @@
       scaleControl: {
         type: Boolean,
         default: false
+      },
+      /**
+       * 覆盖物 - 点击事件状态
+       */
+      pointClick: {
+        type: Boolean,
+        default: true
       }
     },
     setup(props, ctx) {
@@ -97,6 +104,12 @@
       const initPoint = (point) => { // 初始化点覆盖物
         let marker = new mapGl.Marker(point); // 创建点标记
         map.addOverlay(marker); // 地图放置点标记
+
+        if (props.pointClick) { // 覆盖物点击事情状态判断
+          marker.addEventListener('click', () => {
+            ctx.emit('clickPoint', point, marker);
+          });
+        }
       }
 
       onMounted(() => {

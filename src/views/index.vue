@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <baidu-map :pointList="pointList" />
+        <baidu-map :pointList="pointList" @clickPoint="handsClickPoint" />
     </div>
 </template>
 
@@ -21,8 +21,13 @@
                 lat: 31.302002
             }]
 
+            const handsClickPoint = (e,v) => {
+                console.log(e,v);
+            }
+
             return{
-                pointList
+                pointList,
+                handsClickPoint
             }
         }
     }
